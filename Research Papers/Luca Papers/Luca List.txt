@@ -1,0 +1,410 @@
+
+ 2- Factual and Counterfactual Explanations for Black Box Decision Making
+Guidotti et al 2019
+https://ieeexplore.ieee.org/abstract/document/8920138
+
+Local classifier black box - derives decision rule explanations of factual reason for classification. Also includes counterfactuals - 
+suggesting the changes in the instance features that would lead to a different outcome.
+
+
+Experimental results show
+that the proposed method outperforms existing approaches in terms of the quality of the
+explanations and of the accuracy in mimicking the black box.
+
+
+Reads a little but like Rory's description.
+
+We propose LORE, a LOcal Rule-based Explanation
+method for tabular data. Given a black box
+binary predictor b and a specific instance x
+labeled with outcome y by b, we build a simple,
+interpretable predictor by first generating a balanced
+set of neighbor instances of the given x
+through an ad-hoc genetic algorithm, and then
+extracting from such a set labeled with b a decision
+tree classifier. A local explanation is then
+extracted from the obtained decision tree.
+
+
+The
+local explanation is a pair composed by 1)
+a—factual—logic rule, corresponding to the path
+in the tree that explains why x has been labeled
+as y by b, and 2) a set of counterfactual rules,
+explaining which changes in x would invert the
+class y assigned by b. For example, from the
+compas dataset, we may have the following
+explanation: the rule fage39; race¼African–
+American; recidivist¼Trueg!HighRisk and the
+counterfactuals fage>40g and frace¼White–
+Americang.
+
+The intuition behind our method, common
+to other local approaches, such as LIME
+3 and
+ANCHOR,4 is that the decision boundary for the
+black box can be arbitrarily complex over the
+whole data space, but in the neighborhood of
+a data point there is a high chance that the
+decision boundary is clear and simple, hence
+amenable to be captured by an interpretable
+model. These methods are named local
+because they focus on the behavior of the
+black box in the neighborhood of the specific
+instance x, without providing a single description
+of the logic of the black box for all possible
+instances.
+
+We
+consider the following performance indicators
+to evaluate the quality of the explanations:
+ The fidelityðY; ^ Y Þ 2 ½0; 1 compares the predictions
+of c and b on Z measuring how good
+is c at mimicking b.
+ The l  fidelityðY; ^ Y Þ 2 ½0; 1 compares the
+predictions of c and b on the local (hence “l-”)
+instances of Z covered by r measuring how
+good is r at mimicking b.
+ The hitðy; ^yÞ 2 f0; 1g compares the predictions
+of c and b on the instance x under analysis.
+It returns 1 if cðxÞ is equal to bðxÞ, and 0
+otherwise.
+
+
+
+
+
+
+3- Evaluation of Interpretable Association Rule
+Mining Methods on time-series in the Maritime
+Domain
+Veerappa et al 2021
+10.1007/978-3-030-68796-0_15
+
+
+
+Three rule mining algorithms are evaluated on
+the classication of vessel types trained on a real world dataset. Each
+one is a surrogate model which mimics the behavior of the underly-
+ing neural network.
+
+
+Again sounds a bit like Rory's idea...
+
+
+Evaluating any machine learning or deep learning algorithms is an essential part
+of the task. In this section, the list of quality measures that are used to compare
+the performance of the three methods are listed.
+
+F1-score of the main model (F1;main) is the harmonic mean between precision
+and recall of the main model M, which seeks a balance between precision
+and recall. It is dened as
+F1 = 2 
+precision  recall
+precision + recall
+: (16)
+Typically the F1-score is more useful than accuracy, particularly if the class
+distribution is uneven. Here, the prediction function is an MLP algorithm.
+
+
+F1-score of the surrogate model (F1;surr) is the harmonic mean between preci-
+sion and recall of the surrogate model N and dened as shown in eq. (16).
+Here, the prediction function is an SBRL algorithm, which is used to mimic
+the behavior of the main model M.
+
+
+Fidelity is an accuracy score, which measures the predictions of the surrogate
+model to the predictions of the main model. This metric matters the most,
+as the surrogate model tries to mimic the behavior of the main model.
+
+
+Average Number of Rules (ANR) is the number of rules which a decision list
+uses to classify a single sample. It should be noted that the notion of Av-
+erage Path Length (APL) is not explicitly transferable to rule lists, but for
+comparison purposes, APL has been replaced with ANR.
+
+
+
+Heavily focused on time-series; defintions and experiments might be useful but ignore for now.
+
+
+
+
+
+
+
+4 - Anchors: High-Pecision model agnostic explanations
+
+
+When simulating users, we compute coverage (what fraction
+of the instances they predict after seeing explanations)
+and precision (what fraction of the predictions were correct)
+on the complete test set. For each dataset, model, and explanation
+type, we compute these metrics for the explanation
+of each instance in the validation data.
+
+
+Anchor v Lime experiments - but runs a user survey, which I hope to avoid.
+
+
+
+
+
+4a - PALM: Machine Learning Explanations For Iterative Debugging
+
+
+One approach is to explain a complex model using a simplified
+approximation (a surrogate model) [13, 14, 16]. For example, we
+could identify a subset of the training data in the neighborhood of a
+mis-predicted test record, and fit a sparse linear model. [13, 14, 16].
+Although these approximations can identify salient features, the
+developer might also want to select a subset of training examples
+most responsible for the prediction.
+
+Interesting but probably will not dig further into this one just yet.
+
+
+
+
+
+
+5 - Explainable Artificial Intelligence: A Survey
+
+Too general - ignore for now.
+
+
+
+
+
+6 - Notions of explainability and evaluation approaches for explainable artificial
+intelligence - Luca paper
+
+Essentailly a Literature Review.
+
+A thorough review of these studies led to the identification of two
+main ways to evaluate methods for explainability:
+• objective evaluations - it includes research studies that
+employed objective metrics and automated approaches to evaluate
+methods for explainability;
+• human-centred evaluations - it contains those studies that
+evaluated methods for explainability with a human-in-the-loop
+approach by involving end-users and exploited their feedback or
+informed judgement.
+
+Hard to get anything conerte from this paper.
+
+
+
+
+
+7 - CHARACTERIZATION OF SYMBOLIC RULES
+EMBEDDED IN DEEP DIMLP NETWORKS: A
+CHALLENGE TO TRANSPARENCY OF DEEP LEARNING
+
+
+The results obtained
+on the Thyroid dataset and the Wisconsin Breast Cancer dataset show that the predictive
+accuracy of the extracted rules compare very favorably with respect to state of the
+art results.
+
+Heavily focused on Discretized Interpretable Multi
+Layer Perceptrons (DIMLP), and DIMLPs trained by deep learning.
+
+
+In Table 1 we report the details of two extracted
+rulesets. The first is the best in terms of rules’
+predicitive accuracy, while the second presents less
+rules with lower predicitve accuracy, but still competitive
+with state of the art results. Fidelity is reported
+in this table as the degree of matching between
+rule classifications and network responses on
+the testing test (fidelity on the training set is 100%).
+In the fifth row is shown the predictive accuracy of
+rules when a neural network model agrees with the
+extracted rules. The number of default rule activations
+reported in the last row represents how many
+testing samples were uncovered. Note that in such a
+situation, the classification is provided by the neural
+network.
+
+
+
+Might be able to use the criteria list in Table 11 as a guide. (Maybe).
+
+
+
+
+8 - Towards Dependable and Explainable Machine
+Learning Using Automated Reasoning
+
+Too vague - ignore.
+
+
+
+
+
+9 - A Comparison Study on Rule Extraction from
+Neural Network Ensembles, Boosted Shallow Trees, and SVMs
+
+
+Table 2 gives for each dataset the average
+predictive accuracy obtained by the best model (column
+three), as well as the average predictive accuracy of the
+best extracted rulesets (column five). The difference of these
+average accuracies is reported in column six. The last three
+columns indicate the average fidelity, the average number of
+generated rules, and the average number of antecedents per
+rule, respectively. It isworth noting that the average predictive
+accuracy of rulesets is rarely better than the predictive
+accuracy provided by the best model, because the power of
+expression of rules is somewhat limited with respect to that of the original models.
+
+We
+measured the predicative accuracy of the generated rulesets,
+their complexity, and their fidelity.
+
+
+
+
+
+
+10 - From Ensemble Methods to Comprehensible Models
+
+Nope.
+
+
+
+
+12 - Towards Trustable Explainable AI
+
+
+Although the
+majority of approaches to XAI are of heuristic nature,
+recent work proposed the use of abductive reasoning
+to computing provably correct explanations
+for machine learning (ML) predictions.
+
+The proposed
+rigorous approach was shown to be useful
+not only for computing trustable explanations but
+also for validating explanations computed heuristically
+
+
+Might have relevance in terms of SHAP v LIMe v Anchors
+
+
+
+
+
+
+13 -Interpretable Decision Sets: A Joint Framework for Description and Prediction
+doi: 10.1145/2939672.2939874
+
+
+Here we propose interpretable decision sets, a framework for building predictive models 
+that are highly accurate, yet also highly interpretable. Decision sets are sets of independent if-then rules.
+
+
+
+Experiments show that interpretable decision sets are as accurate at classification as 'state-of-the-art' 
+machine learning techniques.
+
+
+we introduce a learning objective that scores both accuracy, measured by the precision and recall of the rules; 
+and interpretability, measured by the conciseness, coverage, and overlap of the rule set.
+
+
+3.2.1 Interpretability
+
+Size: First, we consider the size of the decision set itself. The fewer the rules in a decision set, the easier it is 
+for a user to understand all of the conditions that correspond to a particular class label.
+Definition 2: size(ℛ) is the number of rules in a decision set ℛ.
+
+First, we favor decision sets with a smaller number of rules:
+
+Number of Rules—This is the number of rules in a decision set ℛ denoted by size(ℛ) (Refer to the notation in Section 3.2.) It is straightforward 
+to see how this metric applies to decision lists. When counting the number of rules in a decision list, we exclude the final else clause.
+
+
+
+
+Length: Second, we consider the size of rules in a decision set. Logical functions are generally easy for humans to 
+understand [16], so it is natural to use them to specify itemsets. However, if the number of predicates in the itemset 
+of a rule is too large, it will loose its natural interpretability. We use the term length to measure the size of a rule.
+Definition 3: length(r) for some rule r = (s, c) is the number of predicates in the itemset s.
+We will use these two properties to measure the 'conciseness' of a decision set, a key component of its interpretability.
+
+Second, we favor a decision set with fewer predicates in its rules:
+
+Avg. Rule Length—The metric captures the average number of predicates a human reader must parse to understand a rule in a 
+decision set ℛ. It is computed as the mean length of the rules in ℛ:
+
+
+
+
+
+
+Cover: The first step in assessing the clarity of a decision set’s description is measuring which points in the data set it covers, which we define on a per-rule basis.
+Definition 4: cover(r) for a rule r = (s, c) is the set of data points in with attribute values x that satisfy the itemset s.
+Note that whether a point xi is in cover(r) does not depend on the observed label yi. Measuring cover will allow us to reason about how the data set is divided by rules.
+
+Fraction of Classes—This metric measures what fraction of the class labels in the data are predicted by at least one rule in a decision set ℛ:
+
+
+
+
+Overlap: We measure whether the decision boundaries of a decision set are clearly defined, via the overlap of rules:
+Definition 5: overlap(r, r′) for rules r = (s, c) and r′ = (s′, c′) is the set of data points that satisfy both s and s′:
+
+Fraction Overlap—This metric captures the extent of overlap between every pair of rules of a decision set ℛ. 
+Smaller values on this metric signify higher interpretability.
+
+Fraction Uncovered—This metric computes the fraction of data points which are not covered by any rule in a decision set.
+This metric assumes a minimum value of 0.0 when all the data points are covered by some rule in ℛ and it takes a maximum 
+value of 1.0 when no data point is covered by any rule in ℛ which could imply that ℛ is empty.
+
+
+
+
+Accuracy—A decision set must be an accurate predictor of the class labels.
+
+
+
+14 - A Bibliometric Analysis of the Explainable Articial Intelligence Research
+Field
+
+Nope. Maybe to find references for CA3
+
+
+
+19 - Interpretability Beyond Feature Attribution:
+Quantitative Testing with Concept Activation Vectors (TCAV)
+
+Nope.
+
+
+20 - Peeking inside the Black Box - already covered...
+
+
+24 - Building More Explainable Artificial Intelligence with Argumentation
+
+Instead
+of using only a black box model, an explainable model
+is created to perform reasoning based on the latent patterns
+learned and to generate explanations for the output.
+
+
+
+26 - Interpretation of Trained Neural Networks by Rule Extraction
+
+Nope.
+
+
+
+27 - The Truth is in There -
+Rule Extraction from Opaque Models Using Genetic Programming
+
+
+Nope.
+
+
